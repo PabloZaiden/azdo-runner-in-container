@@ -10,5 +10,9 @@ if [ "$architecture" == "aarch64" ]; then
     architecture="arm64"
 fi
 
+if [ "$architecture" == "x86_64" ]; then
+    architecture="x64"
+fi
+
 wget https://vstsagentpackage.azureedge.net/agent/$version/pipelines-agent-linux-$architecture-$version.tar.gz
 tar zxvf ./pipelines-agent-linux-$architecture-$version.tar.gz
