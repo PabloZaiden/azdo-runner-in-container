@@ -14,7 +14,8 @@ WORKDIR /home/runner
 
 ENV DEBIAN_FRONTEND=noninteractive
 
-RUN curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+ADD install-azcli.sh /home/runner/install-azcli.sh
+RUN ./install-azcli.sh
 
 ADD install-vsts-agent.sh /home/runner/install-vsts-agent.sh
 RUN ./install-vsts-agent.sh
