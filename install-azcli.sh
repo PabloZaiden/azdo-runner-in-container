@@ -9,7 +9,7 @@ sudo apt-get install -y apt-transport-https ca-certificates curl gnupg lsb-relea
 echo "Creating keyring..."
 sudo mkdir -p /etc/apt/keyrings
 echo "Downloading Microsoft GPG key..."
-curl -sLS https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor | sudo tee /etc/apt/keyrings/microsoft.gpg > /dev/null
+wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor | sudo tee /etc/apt/keyrings/microsoft.gpg > /dev/null
 echo "Setting permissions..."
 sudo chmod go+r /etc/apt/keyrings/microsoft.gpg
 
